@@ -1,7 +1,6 @@
-const inputForm = document.querySelector(".input-form")
-console.log(inputForm)
-
-const input = inputForm.input
+const form = document.querySelector(".input-form")
+console.log(form)
+const input = form.querySelector(".input")
 console.log(input)
-const logInBtn = inputForm.logInBtn
+const logInBtn = form.querySelector(".logInBtn")
 console.log(logInBtn)

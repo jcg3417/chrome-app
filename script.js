@@ -6,7 +6,7 @@ const logInBtn = form.querySelector(".logInBtn")
 console.log(logInBtn)
 
 function handleLogInBtn() {
-    if (input.value == "") {
+    if (input.value === "") {
         alert("Please type in your name!")
     }
 

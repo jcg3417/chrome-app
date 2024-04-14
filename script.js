@@ -11,7 +11,7 @@ function handleLogInBtn() {
     }
 
     console.log("Clicked")
-    console.log(input)
+    console.log(input.value)
 }
 
 logInBtn.addEventListener("click", handleLogInBtn)

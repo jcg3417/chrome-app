@@ -9,9 +9,14 @@ function handleLogInBtn() {
     if (input.value === "") {
         alert("Please type in your name!")
     }
-
+    const lengthOfName = input.value.length
     console.log("Clicked")
-    console.log(input.value)
+    console.dir(input)
+    console.log(lengthOfName)
+
+    if (lengthOfName <= 1) {
+        alert("You name is too short!")
+    }
 }
 
 logInBtn.addEventListener("click", handleLogInBtn)

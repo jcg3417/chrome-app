@@ -6,17 +6,17 @@ const logInBtn = form.querySelector(".logInBtn")
 console.log(logInBtn)
 
 function handleLogInBtn() {
+    const lengthOfName = input.value.length
     if (input.value === "") {
         alert("Please type in your name!")
+    } else if (lengthOfName <= 1) {
+        alert("You name is too short!")
+    } else if (lengthOfName > 15) {
+        alert("Your name is too long!")
     }
-    const lengthOfName = input.value.length
     console.log("Clicked")
     console.dir(input)
     console.log(lengthOfName)
-
-    if (lengthOfName <= 1) {
-        alert("You name is too short!")
-    }
 }
 
 logInBtn.addEventListener("click", handleLogInBtn)

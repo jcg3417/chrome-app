@@ -2,7 +2,7 @@ const form = document.querySelector(".input-form")
 const input = form.querySelector(".input")
 const logInBtn = form.querySelector(".logInBtn")
 const HIDDEN_CLASSNAME = "hidden"
-const hiddenInnerTextH1 = document.querySelector(".innerText")
+const hiddenInnerTextH1 = document.getElementById("h1").innerText
 
 console.log(hiddenInnerTextH1)
 
@@ -20,6 +20,7 @@ function handleLogInBtn() {
         alert("Your name is too long!")
     } else {
         form.classList.add(HIDDEN_CLASSNAME)
+        hiddenInnerTextH1.classList.remove(HIDDEN_CLASSNAME)
     }
 }
 

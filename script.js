@@ -2,9 +2,9 @@ const form = document.querySelector(".input-form")
 const input = form.querySelector(".input")
 const logInBtn = form.querySelector(".logInBtn")
 const HIDDEN_CLASSNAME = "hidden"
-const body = document.body.innerText
+const hiddenInnerTextH1 = document.querySelector(".innerText")
 
-console.log(body)
+console.log(hiddenInnerTextH1)
 
 function handleLogInBtn() {
     const lengthOfName = input.value.length

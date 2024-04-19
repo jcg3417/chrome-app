@@ -2,14 +2,13 @@ const form = document.querySelector(".input-form")
 const input = form.querySelector(".input")
 const logInBtn = form.querySelector(".logInBtn")
 const HIDDEN_CLASSNAME = "hidden"
-const hiddenInnerTextH1 = document.getElementById("h1").innerText
-
-console.log(hiddenInnerTextH1)
 
 function handleLogInBtn() {
     const lengthOfName = input.value.length
 
-    const userName = input.value
+    let hiddenInnerTextH1 = document.getElementById("h1")
+    console.log(hiddenInnerTextH1)
+    let userName = input.value
     console.log(userName)
 
     if (userName === "") {
@@ -20,8 +19,8 @@ function handleLogInBtn() {
         alert("Your name is too long!")
     } else {
         form.classList.add(HIDDEN_CLASSNAME)
-        hiddenInnerTextH1.classList.remove(HIDDEN_CLASSNAME)
-        hiddenInnerTextH1.innerText = `Hooray! Hello ${userName}`
+        document.getElementById("h1").classList.remove(HIDDEN_CLASSNAME)
+        hiddenInnerTextH1.innerText = `Hooray!!! Hello ${userName}!`
     }
 }
 

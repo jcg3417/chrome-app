@@ -21,6 +21,7 @@ function handleLogInBtn() {
     } else {
         form.classList.add(HIDDEN_CLASSNAME)
         hiddenInnerTextH1.classList.remove(HIDDEN_CLASSNAME)
+        hiddenInnerTextH1.innerText = `Hooray! Hello ${userName}`
     }
 }
 

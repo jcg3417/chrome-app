@@ -21,6 +21,11 @@ function handleLogInBtn() {
         form.classList.add(HIDDEN_CLASSNAME)
         document.getElementById("h1").classList.remove(HIDDEN_CLASSNAME)
         hiddenInnerTextH1.innerText = `Hooray!!! Hello ${userName}!`
+        hiddenInnerTextH1.appendChild
+        let returnToHomeBtn = document.createElement("button")
+        returnToHomeBtn.textContent = "Back"
+        let parentElement = document.getElementById("h1")
+        parentElement.appendChild(returnToHomeBtn)
     }
 }
 

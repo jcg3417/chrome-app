@@ -20,7 +20,8 @@ function handleLogInBtn() {
         form.classList.add(HIDDEN_CLASSNAME)
         document.getElementById("h1").classList.remove(HIDDEN_CLASSNAME)
         hiddenInnerTextH1.innerText = `Hooray!!! Hello ${userName}!`
-        localStorage.setItem(userName)
+        localStorage.setItem("userName", userName)
+
         hiddenInnerTextH1.appendChild
         let returnToHomeBtn = document.createElement("button")
         returnToHomeBtn.textContent = "Back"

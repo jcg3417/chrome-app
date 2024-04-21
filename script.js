@@ -8,7 +8,7 @@ const USERNAME_KEY = "userName"
 function handleLogInBtn() {
     const lengthOfName = input.value.length
 
-    let hiddenInnerTextH1 = document.getElementById("h1") //Greetings
+    let hiddenInnerTextH1 = document.getElementById("greetings") //Greetings
     let userName = input.value.trim() //User input
 
     if (userName === "") {
@@ -19,15 +19,16 @@ function handleLogInBtn() {
         alert("Your name is too long!")
     } else {
         form.classList.add(HIDDEN_CLASSNAME) //Hiding original form
-        document.getElementById("h1").classList.remove(HIDDEN_CLASSNAME) //Showing welcome message
+        document.getElementById("greetings").classList.remove(HIDDEN_CLASSNAME) //Showing welcome message
         hiddenInnerTextH1.innerText = `Hooray!!! Hello ${userName}!`
 
         localStorage.setItem(USERNAME_KEY, userName) //Saving user input
 
+        //Adding & showing return btn
         hiddenInnerTextH1.appendChild
         let returnToHomeBtn = document.createElement("button")
         returnToHomeBtn.textContent = "Back"
-        let parentElement = document.getElementById("h1")
+        let parentElement = document.getElementById("greetings")
         parentElement.appendChild(returnToHomeBtn)
     }
 }

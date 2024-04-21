@@ -9,7 +9,7 @@ function handleLogInBtn() {
     const lengthOfName = input.value.length
 
     let hiddenInnerTextH1 = document.getElementById("h1")
-    let userName = input.value
+    let userName = input.value.trim()
 
     if (userName === "") {
         alert("Please type in your name!")

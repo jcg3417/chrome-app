@@ -8,8 +8,8 @@ const USERNAME_KEY = "userName"
 function handleLogInBtn() {
     const lengthOfName = input.value.length
 
-    let hiddenInnerTextH1 = document.getElementById("h1")
-    let userName = input.value.trim()
+    let hiddenInnerTextH1 = document.getElementById("h1") //Greetings
+    let userName = input.value.trim() //User input
 
     if (userName === "") {
         alert("Please type in your name!")

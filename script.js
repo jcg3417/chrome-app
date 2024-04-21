@@ -4,6 +4,14 @@ const logInBtn = form.querySelector(".logInBtn")
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "userName"
 
+function addReturnBtn() {
+    document.getElementById("greetings").appendChild
+    let returnToHomeBtn = document.createElement("button")
+    returnToHomeBtn.textContent = "Back"
+    let parentElement = document.getElementById("greetings")
+    parentElement.appendChild(returnToHomeBtn)
+}
+
 //When the log in btn pressed
 function handleLogInBtn() {
     const lengthOfName = input.value.length
@@ -24,12 +32,7 @@ function handleLogInBtn() {
 
         localStorage.setItem(USERNAME_KEY, userName) //Saving user input
 
-        //Adding & showing return btn
-        hiddenInnerTextH1.appendChild
-        let returnToHomeBtn = document.createElement("button")
-        returnToHomeBtn.textContent = "Back"
-        let parentElement = document.getElementById("greetings")
-        parentElement.appendChild(returnToHomeBtn)
+        addReturnBtn() //Adding & showing return btn
     }
 }
 

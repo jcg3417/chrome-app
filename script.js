@@ -2,6 +2,7 @@ const form = document.querySelector(".input-form")
 const input = form.querySelector(".input")
 const logInBtn = form.querySelector(".logInBtn")
 const HIDDEN_CLASSNAME = "hidden"
+const USERNAME_KEY = "userName"
 
 //When the log in btn pressed
 function handleLogInBtn() {
@@ -17,10 +18,11 @@ function handleLogInBtn() {
     } else if (lengthOfName > 15) {
         alert("Your name is too long!")
     } else {
-        form.classList.add(HIDDEN_CLASSNAME)
-        document.getElementById("h1").classList.remove(HIDDEN_CLASSNAME)
+        form.classList.add(HIDDEN_CLASSNAME) //Hiding original form
+        document.getElementById("h1").classList.remove(HIDDEN_CLASSNAME) //Showing welcome message
         hiddenInnerTextH1.innerText = `Hooray!!! Hello ${userName}!`
-        localStorage.setItem("userName", userName)
+
+        localStorage.setItem(USERNAME_KEY, userName) //Saving user input
 
         hiddenInnerTextH1.appendChild
         let returnToHomeBtn = document.createElement("button")

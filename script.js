@@ -37,3 +37,13 @@ function handleLogInBtn() {
 }
 
 logInBtn.addEventListener("click", handleLogInBtn)
+
+const getTime = document.getElementById("time")
+
+function getRealTime() {
+    const date = new Date()
+    getTime.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    // console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
+}
+
+setInterval(getRealTime, 1000)

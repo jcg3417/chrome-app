@@ -41,9 +41,11 @@ logInBtn.addEventListener("click", handleLogInBtn)
 const getTime = document.getElementById("time")
 
 function getRealTime() {
-    const date = new Date()
-    getTime.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    const date = new Date().toLocaleTimeString()
+    getTime.innerText = date
+    // getTime.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
     // console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
 }
 
+getRealTime()
 setInterval(getRealTime, 1000)

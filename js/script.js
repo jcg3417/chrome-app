@@ -28,7 +28,7 @@ function handleLogInBtn() {
     } else {
         form.classList.add(HIDDEN_CLASSNAME) //Hiding original form
         document.getElementById("greetings").classList.remove(HIDDEN_CLASSNAME) //Showing welcome message
-        hiddenInnerTextH1.innerText = `Hooray!!! Hello ${userName}!`
+        hiddenInnerTextH1.innerText = `Welcome ${userName}!`
 
         localStorage.setItem(USERNAME_KEY, userName) //Saving user input
 

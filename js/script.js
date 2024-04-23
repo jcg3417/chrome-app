@@ -37,13 +37,3 @@ function handleLogInBtn() {
 }
 
 logInBtn.addEventListener("click", handleLogInBtn)
-
-const getTime = document.getElementById("time")
-
-function getRealTime() {
-    const date = new Date().toLocaleTimeString()
-    getTime.innerText = date
-}
-
-getRealTime()
-setInterval(getRealTime, 1000)

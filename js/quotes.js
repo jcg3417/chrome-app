@@ -40,3 +40,12 @@ const quotes = [
         author: "Sheda Savage",
     },
 ]
+
+// Pick a random quote and author from quotes array
+const quoteNumber = Math.floor(Math.random() * 10)
+console.log(quoteNumber)
+const quote = quotes[quoteNumber].quote
+const author = quotes[quoteNumber].author
+console.log(`"${quote}"`, author)
+
+// Assign picked quote and author to a div

@@ -4,15 +4,15 @@ const logInBtn = form.querySelector(".logInBtn")
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "userName"
 
+// Adding back btn
 function addReturnBtn() {
-    document.getElementById("greetings").appendChild
-    let returnToHomeBtn = document.createElement("button")
-    returnToHomeBtn.textContent = "Back"
-    let parentElement = document.getElementById("greetings")
-    parentElement.appendChild(returnToHomeBtn)
+    let returnToHomeBtn = document.createElement("button") // Create btn element
+    returnToHomeBtn.textContent = "Back" // Add text in back btn
+    let parentElement = document.getElementById("greetings") // Select parent element
+    parentElement.appendChild(returnToHomeBtn) // Append back btn under greetings
 }
 
-//When the log in btn pressed
+// When the log in btn pressed
 function handleLogInBtn() {
     const lengthOfName = input.value.length
 

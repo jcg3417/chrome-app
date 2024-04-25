@@ -42,7 +42,7 @@ const quotes = [
 ]
 
 // Pick a random quote and author from quotes array
-const quoteNumber = Math.floor(Math.random() * 10)
+const quoteNumber = Math.floor(Math.random() * quotes.length)
 const quote = quotes[quoteNumber].quote
 const author = quotes[quoteNumber].author
 console.log(`"${quote}"`, author)

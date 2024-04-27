@@ -9,8 +9,8 @@ console.log(backgroundImage)
 // Add a new img tag
 const newImageTag = document.createElement("img")
 console.log(newImageTag)
-newImageTag.src = `${backgroundImage}`
+newImageTag.src = `images/${backgroundImage}`
 // console.log(newImageTag.src)
 
 const divAfter = document.getElementById("quoteSection")
-document.body.after(newImageTag, divAfter)
+document.body.insertBefore(newImageTag, divAfter)

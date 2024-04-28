@@ -7,10 +7,9 @@ const backgroundImage = images[chosenImg]
 console.log(backgroundImage)
 
 // Add a new img tag
-const newImageTag = document.createElement("img")
-console.log(newImageTag)
-newImageTag.src = `images/${backgroundImage}`
+const newImageElement = document.createElement("img")
+console.log(newImageElement)
+newImageElement.src = `images/${backgroundImage}`
 
-// Insert
-const divBefore = document.getElementById("quoteSection")
-document.body.insertBefore(newImageTag, divBefore)
+// Append background element
+document.body.appendChild(newImageElement)

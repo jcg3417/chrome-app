@@ -2,6 +2,10 @@ const toDoListForm = document.getElementById("todolist-form")
 const toDoInput = document.getElementById("todo-input")
 const toDoList = document.getElementById("todolist")
 
+function deleteBtnHandler(e) {
+    e.target.parentNode.remove()
+}
+
 function addToDo() {
     let toDoText = toDoInput.value
 
@@ -17,6 +21,8 @@ function addToDo() {
     span.innerText = toDoText
 
     toDoList.appendChild(li)
+
+    deleteBtn.addEventListener("click", deleteBtnHandler)
 }
 
 function toDoListHandler(e) {

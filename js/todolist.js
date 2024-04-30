@@ -3,7 +3,8 @@ const toDoInput = document.getElementById("todo-input")
 const toDoList = document.getElementById("todolist")
 
 function deleteBtnHandler(e) {
-    e.target.parentNode.remove()
+    const deletingTarget = e.target.parentNode
+    deletingTarget.remove()
 }
 
 function addToDo() {

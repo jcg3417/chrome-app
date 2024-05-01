@@ -45,7 +45,6 @@ const quotes = [
 const quoteNumber = Math.floor(Math.random() * quotes.length)
 const quote = quotes[quoteNumber].quote
 const author = quotes[quoteNumber].author
-console.log(`"${quote}"`, author)
 
 // Assign picked quote and author to a div
 const quoteSpan = document.getElementById("quote")

@@ -5,9 +5,10 @@ const toDoList = document.getElementById("todolist")
 function deleteBtnHandler(e) {
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
+    // localStorage.removeItem("toDos", toDoText) // Delete from localstorage
 }
 
-function addToDo() {
+function toDoAction() {
     let toDoText = toDoInput.value
 
     const span = document.createElement("span")
@@ -21,6 +22,8 @@ function addToDo() {
 
     span.innerText = toDoText
 
+    localStorage.setItem("toDos", toDoText) // Save in localstorage
+
     toDoList.appendChild(li)
 
     deleteBtn.addEventListener("click", deleteBtnHandler)
@@ -28,7 +31,7 @@ function addToDo() {
 
 function toDoListHandler(e) {
     e.preventDefault()
-    addToDo()
+    toDoAction()
     toDoInput.value = ""
 }
 

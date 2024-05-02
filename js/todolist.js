@@ -5,7 +5,11 @@ const toDoList = document.getElementById("todolist")
 function deleteBtnHandler(e) {
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
-    // localStorage.removeItem("toDos", toDoText) // Delete from localstorage
+    // localStorage.removeItem("toDos") // Delete from localstorage
+}
+
+function storeToDos() {
+    localStorage.setItem("toDos", JSON.stringify(toDoText)) // Save in localstorage
 }
 
 function toDoAction() {
@@ -22,7 +26,7 @@ function toDoAction() {
 
     span.innerText = toDoText
 
-    localStorage.setItem("toDos", toDoText) // Save in localstorage
+    storeToDos()
 
     toDoList.appendChild(li)
 

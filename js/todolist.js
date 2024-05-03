@@ -11,7 +11,7 @@ function deleteBtnHandler(e) {
 }
 
 function storeToDos() {
-    localStorage.setItem("toDos", JSON.stringify(toDoText)) // Save in localstorage
+    localStorage.setItem("toDos", JSON.stringify(toDos)) // Save in localstorage
 }
 
 function toDoAction() {
@@ -28,8 +28,8 @@ function toDoAction() {
 
     span.innerText = toDoText
 
-    storeToDos()
     toDos.push(toDoText)
+    storeToDos()
 
     toDoList.appendChild(li)
 

@@ -2,6 +2,8 @@ const toDoListForm = document.getElementById("todolist-form")
 const toDoInput = document.getElementById("todo-input")
 const toDoList = document.getElementById("todolist")
 
+const toDos = []
+
 function deleteBtnHandler(e) {
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
@@ -13,13 +15,13 @@ function storeToDos() {
 }
 
 function toDoAction() {
-    let toDoText = toDoInput.value
-
     const span = document.createElement("span")
     const li = document.createElement("li")
     const deleteBtn = document.createElement("button")
     deleteBtn.classList.add("deleteBtn")
     deleteBtn.innerText = "❌"
+
+    let toDoText = toDoInput.value
 
     li.appendChild(span)
     li.appendChild(deleteBtn)
@@ -27,6 +29,7 @@ function toDoAction() {
     span.innerText = toDoText
 
     storeToDos()
+    toDos.push(toDoText)
 
     toDoList.appendChild(li)
 

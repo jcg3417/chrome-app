@@ -12,6 +12,8 @@ function deleteBtnHandler(e) {
 
 function storeToDos() {
     localStorage.setItem("toDos", JSON.stringify(toDos)) // Save in localstorage
+    const toDosParsed = JSON.parse(localStorage.getItem("toDos"))
+    console.log(toDosParsed)
 }
 
 function toDoAction() {

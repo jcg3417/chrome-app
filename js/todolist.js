@@ -7,8 +7,9 @@ const toDos = []
 const getToDos = localStorage.getItem("toDos")
 
 if (getToDos !== null) {
-    const toDosParsed = JSON.parse(localStorage.getItem("toDos"))
-    toDosParsed.foreach((item) => console.log("This is the turn of ", item))
+    const toDosParsed = JSON.parse(getToDos)
+    console.log(toDosParsed)
+    toDosParsed.forEach((item) => console.log("This is the turn of ", item))
 }
 
 function deleteBtnHandler(e) {

@@ -4,6 +4,13 @@ const toDoList = document.getElementById("todolist")
 
 const toDos = []
 
+const getToDos = localStorage.getItem("toDos")
+
+if (getToDos !== null) {
+    const toDosParsed = JSON.parse(localStorage.getItem("toDos"))
+    toDosParsed.foreach((item) => console.log("This is the turn of ", item))
+}
+
 function deleteBtnHandler(e) {
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
@@ -12,8 +19,6 @@ function deleteBtnHandler(e) {
 
 function storeToDos() {
     localStorage.setItem("toDos", JSON.stringify(toDos)) // Save in localstorage
-    const toDosParsed = JSON.parse(localStorage.getItem("toDos"))
-    console.log(toDosParsed)
 }
 
 function toDoAction() {

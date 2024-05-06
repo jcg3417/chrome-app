@@ -2,13 +2,13 @@ const toDoListForm = document.getElementById("todolist-form")
 const toDoInput = document.getElementById("todo-input")
 const toDoList = document.getElementById("todolist")
 
-const toDos = []
+let toDos = []
 
 const getToDos = localStorage.getItem("toDos")
 
 if (getToDos !== null) {
     const toDosParsed = JSON.parse(getToDos)
-    console.log(toDosParsed)
+    toDos = toDosParsed
     toDosParsed.forEach((item) => console.log("This is the turn of ", item))
 }
 

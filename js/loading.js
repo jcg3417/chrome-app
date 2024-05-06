@@ -1,3 +1,1 @@
-// window.addEventListener("load", (event) => {
-//     localStorage.clear()
-// })
+window.addEventListener("load", (event) => localStorage.clear())

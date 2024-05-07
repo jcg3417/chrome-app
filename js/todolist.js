@@ -14,9 +14,13 @@ if (getToDos !== null) {
 }
 
 function deleteBtnHandler(e) {
+    // Delete from DOM
     const deletingTarget = e.target.parentNode
+    console.log(deletingTarget)
     deletingTarget.remove()
-    // localStorage.removeItem("toDos") // Delete from localstorage
+
+    // Delete from the localstorage
+    // localStorage.getItem(`${}`)    // Find the element to remove
 }
 
 function storeToDos() {
@@ -46,11 +50,12 @@ function toDoAction() {
 }
 
 function toDoListHandler(e) {
-    e.preventDefault()
-    toDoAction()
-    toDoInput.value = ""
+    if (toDoInput.value !== "") {
+        e.preventDefault()
+        toDoAction()
+        toDoInput.value = ""
+    }
 }
 
 toDoListForm.addEventListener("submit", toDoListHandler)
-
 toDoListAddBtn.addEventListener("click", toDoListHandler)

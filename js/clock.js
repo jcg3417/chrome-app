@@ -6,4 +6,4 @@ function getRealTime() {
 }
 
 getRealTime()
-setInterval(getRealTime, 1000)
+setInterval(getRealTime, 1000) // Repeat getRealTime every second

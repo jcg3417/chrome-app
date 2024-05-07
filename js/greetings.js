@@ -16,8 +16,8 @@ function addReturnBtn() {
 function handleLogInBtn() {
     const lengthOfName = input.value.length
 
-    let hiddenInnerTextH1 = document.getElementById("greetings") //Greetings
-    let userName = input.value.trim() //User input
+    let hiddenInnerTextH1 = document.getElementById("greetings") // Greetings
+    let userName = input.value.trim() // User input
 
     if (userName === "") {
         alert("Please type in your name!")
@@ -26,13 +26,13 @@ function handleLogInBtn() {
     } else if (lengthOfName > 15) {
         alert("Your name is too long!")
     } else {
-        form.classList.add(HIDDEN_CLASSNAME) //Hiding original form
-        document.getElementById("greetings").classList.remove(HIDDEN_CLASSNAME) //Showing welcome message
+        form.classList.add(HIDDEN_CLASSNAME) // Hiding original form
+        document.getElementById("greetings").classList.remove(HIDDEN_CLASSNAME) // Showing welcome message
         hiddenInnerTextH1.innerText = `Welcome ${userName}!`
 
         localStorage.setItem(USERNAME_KEY, userName) //Saving user input
 
-        addReturnBtn() //Adding & showing return btn
+        addReturnBtn() // Adding & showing return btn
     }
 }
 

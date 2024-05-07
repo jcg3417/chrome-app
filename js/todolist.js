@@ -1,6 +1,7 @@
 const toDoListForm = document.getElementById("todolist-form")
 const toDoInput = document.getElementById("todo-input")
 const toDoList = document.getElementById("todolist")
+const toDoListAddBtn = document.getElementById("todolist-add-btn")
 
 let toDos = []
 
@@ -51,3 +52,5 @@ function toDoListHandler(e) {
 }
 
 toDoListForm.addEventListener("submit", toDoListHandler)
+
+toDoListAddBtn.addEventListener("click", toDoListHandler)

@@ -1,23 +1,36 @@
-const form = document.querySelector(".input-form")
-const input = form.querySelector(".input")
-const logInBtn = form.querySelector(".logInBtn")
+const form = document.querySelector(".logIn-form")
+const input = form.querySelector(".logIn-input")
+const logInBtn = form.querySelector(".logIn-Btn")
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "userName"
 
-// Adding back btn
-function addReturnBtn() {
-    let returnToHomeBtn = document.createElement("button") // Create btn element
-    returnToHomeBtn.textContent = "Back" // Add text in back btn
-    let parentElement = document.getElementById("greetings") // Select parent element
-    parentElement.appendChild(returnToHomeBtn) // Append back btn under greetings
+// Adding log out btn
+function addLogOutBtn() {
+    const logOutBtn = document.createElement("button") // Create btn element
+    logOutBtn.classList.add("logout-btn")
+    logOutBtn.textContent = "LOG OUT"
+    const parentElement = document.getElementById("greetings") // Select parent element
+    parentElement.appendChild(logOutBtn) // Append back btn under greetings
+
+    logOutBtn.addEventListener("click", handleLogOutBtn)
+}
+
+// Log out
+function handleLogOutBtn() {
+    const logOutBtn = document.querySelector(".logout-btn")
+    logOutBtn.remove()
+
+    form.classList.remove(HIDDEN_CLASSNAME) // Hiding original form
+    document.getElementById("greetings").classList.add(HIDDEN_CLASSNAME) // Showing welcome message
+    input.value = ""
 }
 
 // When the log in btn pressed
 function handleLogInBtn() {
     const lengthOfName = input.value.length
 
-    let hiddenInnerTextH1 = document.getElementById("greetings") // Greetings
-    let userName = input.value.trim() // User input
+    const userName = input.value.trim() // User input without blanks
+    const hiddenInnerTextH1 = document.getElementById("greetings") // Greetings
 
     if (userName === "") {
         alert("Please type in your name!")
@@ -28,11 +41,11 @@ function handleLogInBtn() {
     } else {
         form.classList.add(HIDDEN_CLASSNAME) // Hiding original form
         document.getElementById("greetings").classList.remove(HIDDEN_CLASSNAME) // Showing welcome message
-        hiddenInnerTextH1.innerText = `Welcome ${userName}!`
+        hiddenInnerTextH1.innerText = `Hello ${userName}!`
 
         localStorage.setItem(USERNAME_KEY, userName) //Saving user input
 
-        addReturnBtn() // Adding & showing return btn
+        addLogOutBtn() // Adding & presenting logOut btn
     }
 }
 

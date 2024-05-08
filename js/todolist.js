@@ -16,7 +16,6 @@ if (getToDos !== null) {
 function deleteBtnHandler(e) {
     // Delete from DOM
     const deletingTarget = e.target.parentNode
-    console.log(deletingTarget)
     deletingTarget.remove()
 
     // Delete from the localstorage
@@ -28,21 +27,22 @@ function storeToDos() {
 }
 
 function toDoAction() {
+    // Add HTML elements
     const span = document.createElement("span")
     const li = document.createElement("li")
     const deleteBtn = document.createElement("button")
     deleteBtn.classList.add("deleteBtn")
     deleteBtn.innerText = "❌"
 
-    let toDoText = toDoInput.value
+    let toDoText = toDoInput.value // User todo input
 
     li.appendChild(span)
     li.appendChild(deleteBtn)
 
     span.innerText = toDoText
 
-    toDos.push(toDoText)
-    storeToDos()
+    toDos.push(toDoText) // Add new todo to toDos array
+    storeToDos() // Store user's todos in localstorage
 
     toDoList.appendChild(li)
 

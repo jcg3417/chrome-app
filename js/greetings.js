@@ -23,6 +23,8 @@ function handleLogOutBtn() {
     form.classList.remove(HIDDEN_CLASSNAME) // Hiding original form
     document.getElementById("greetings").classList.add(HIDDEN_CLASSNAME) // Showing welcome message
     input.value = ""
+
+    localStorage.removeItem("userName") // Delete userName from local storage
 }
 
 // When the log in btn pressed

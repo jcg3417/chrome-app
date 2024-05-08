@@ -19,7 +19,9 @@ function deleteBtnHandler(e) {
     deletingTarget.remove()
 
     // Delete from the localstorage
-    // localStorage.getItem(`${}`)    // Find the element to remove
+    // 1. Delete selected element from toDos array
+    // 2. Update toDos array
+    // 3. Save the updated version to local storage again
 }
 
 function storeToDos() {
@@ -38,13 +40,11 @@ function toDoAction() {
 
     li.appendChild(span)
     li.appendChild(deleteBtn)
-
     span.innerText = toDoText
+    toDoList.appendChild(li)
 
     toDos.push(toDoText) // Add new todo to toDos array
     storeToDos() // Store user's todos in localstorage
-
-    toDoList.appendChild(li)
 
     deleteBtn.addEventListener("click", deleteBtnHandler)
 }

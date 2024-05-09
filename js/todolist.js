@@ -1,7 +1,7 @@
 const toDoListForm = document.getElementById("todolist-form")
 const toDoInput = document.getElementById("todo-input")
 const toDoList = document.getElementById("todolist")
-const toDoListAddBtn = document.getElementById("todolist-add-btn")
+const toDoAddBtn = document.getElementById("todolist-add-btn")
 
 let toDos = []
 
@@ -10,18 +10,23 @@ const getToDos = localStorage.getItem("toDos")
 if (getToDos !== null) {
     const toDosParsed = JSON.parse(getToDos)
     toDos = toDosParsed
-    toDosParsed.forEach((item) => console.log("This is the turn of ", item))
+    toDosParsed.forEach((item) => toDoAction())
 }
 
 function deleteBtnHandler(e) {
     // Delete from DOM
+    console.log(toDos)
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
 
     // Delete from the localstorage
     // 1. Delete selected element from toDos array
-    // 2. Update toDos array
-    // 3. Save the updated version to local storage again
+
+    // 2. Empty local storage
+    localStorage.removeItem("toDos")
+    // 2. Update toDos array and save the updated version to local storage again
+    localStorage.setItem("toDos", JSON.stringify(toDos))
+    console.log(toDos)
 }
 
 function storeToDos() {
@@ -58,4 +63,4 @@ function toDoListHandler(e) {
 }
 
 toDoListForm.addEventListener("submit", toDoListHandler)
-toDoListAddBtn.addEventListener("click", toDoListHandler)
+toDoAddBtn.addEventListener("click", toDoListHandler)

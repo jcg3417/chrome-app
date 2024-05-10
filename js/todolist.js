@@ -10,7 +10,7 @@ const getToDos = localStorage.getItem("toDos")
 if (getToDos !== null) {
     const toDosParsed = JSON.parse(getToDos)
     toDos = toDosParsed
-    toDosParsed.forEach((item) => toDoAction())
+    toDosParsed.forEach((item) => console.log("forEach runs"))
 }
 
 function deleteBtnHandler(e) {
@@ -18,7 +18,7 @@ function deleteBtnHandler(e) {
     console.log(toDos)
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
-
+    console.log(deletingTarget, " is removed!")
     // Delete from the localstorage
     // 1. Delete selected element from toDos array
 

@@ -18,13 +18,18 @@ function deleteBtnHandler(e) {
     console.log(toDos)
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
-    console.log(deletingTarget, " is removed!")
+    console.log(deletingTarget, " ← This is removed!")
+
     // Delete from the localstorage
     // 1. Delete selected element from toDos array
-
+    console.dir(deletingTarget)
+    const targetText = deletingTarget.children[0].innerText
+    console.log(targetText)
+    const index = toDos.indexOf()
+    toDos.splice(index, 1)
     // 2. Empty local storage
     localStorage.removeItem("toDos")
-    // 2. Update toDos array and save the updated version to local storage again
+    // 3. Update toDos array and save the updated version to local storage again
     localStorage.setItem("toDos", JSON.stringify(toDos))
     console.log(toDos)
 }
@@ -38,10 +43,10 @@ function toDoAction() {
     const span = document.createElement("span")
     const li = document.createElement("li")
     const deleteBtn = document.createElement("button")
+    let toDoText = toDoInput.value // User todo input
+    span.classList.add(`${toDoText}`)
     deleteBtn.classList.add("deleteBtn")
     deleteBtn.innerText = "❌"
-
-    let toDoText = toDoInput.value // User todo input
 
     li.appendChild(span)
     li.appendChild(deleteBtn)

@@ -15,23 +15,18 @@ if (getToDos !== null) {
 
 function deleteBtnHandler(e) {
     // Delete from DOM
-    console.log(toDos)
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
-    console.log(deletingTarget, " ← This is removed!")
 
     // Delete from the localstorage
     // 1. Delete selected element from toDos array
-    console.dir(deletingTarget)
     const targetText = deletingTarget.children[0].innerText
-    console.log(targetText)
     const index = toDos.indexOf()
     toDos.splice(index, 1)
     // 2. Empty local storage
     localStorage.removeItem("toDos")
     // 3. Update toDos array and save the updated version to local storage again
     localStorage.setItem("toDos", JSON.stringify(toDos))
-    console.log(toDos)
 }
 
 function storeToDos() {

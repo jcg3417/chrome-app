@@ -13,26 +13,6 @@ if (getToDos !== null) {
     toDosParsed.forEach((item) => console.log("forEach runs"))
 }
 
-function deleteBtnHandler(e) {
-    // Delete from DOM
-    const deletingTarget = e.target.parentNode
-    deletingTarget.remove()
-
-    // Delete from the localstorage
-    // 1. Delete selected element from toDos array
-    const targetText = deletingTarget.children[0].innerText
-    const index = toDos.indexOf()
-    toDos.splice(index, 1)
-    // 2. Empty local storage
-    localStorage.removeItem("toDos")
-    // 3. Update toDos array and save the updated version to local storage again
-    localStorage.setItem("toDos", JSON.stringify(toDos))
-}
-
-function storeToDos() {
-    localStorage.setItem("toDos", JSON.stringify(toDos)) // Save in localstorage
-}
-
 function toDoAction() {
     // Add HTML elements
     const span = document.createElement("span")
@@ -52,6 +32,26 @@ function toDoAction() {
     storeToDos() // Store user's todos in localstorage
 
     deleteBtn.addEventListener("click", deleteBtnHandler)
+}
+
+function deleteBtnHandler(e) {
+    // Delete from DOM
+    const deletingTarget = e.target.parentNode
+    deletingTarget.remove()
+
+    // Delete from the localstorage
+    // 1. Delete selected element from toDos array
+    const targetText = deletingTarget.children[0].innerText
+    const index = toDos.indexOf()
+    toDos.splice(index, 1)
+    // 2. Empty local storage
+    localStorage.removeItem("toDos")
+    // 3. Update toDos array and save the updated version to local storage again
+    localStorage.setItem("toDos", JSON.stringify(toDos))
+}
+
+function storeToDos() {
+    localStorage.setItem("toDos", JSON.stringify(toDos)) // Save in localstorage
 }
 
 function toDoListHandler(e) {

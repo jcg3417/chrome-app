@@ -22,6 +22,7 @@ function toDoAction() {
     span.classList.add(`${toDoText}`)
     deleteBtn.classList.add("deleteBtn")
     deleteBtn.innerText = "❌"
+    deleteBtn.addEventListener("click", deleteBtnHandler)
 
     li.appendChild(span)
     li.appendChild(deleteBtn)
@@ -30,8 +31,6 @@ function toDoAction() {
 
     toDos.push(toDoText) // Add new todo to toDos array
     storeToDos() // Store user's todos in localstorage
-
-    deleteBtn.addEventListener("click", deleteBtnHandler)
 }
 
 function deleteBtnHandler(e) {
@@ -47,7 +46,7 @@ function deleteBtnHandler(e) {
     // 2. Empty local storage
     localStorage.removeItem("toDos")
     // 3. Update toDos array and save the updated version to local storage again
-    localStorage.setItem("toDos", JSON.stringify(toDos))
+    storeToDos()
 }
 
 function storeToDos() {
@@ -59,6 +58,13 @@ function toDoListHandler(e) {
         e.preventDefault()
         toDoAction()
         toDoInput.value = ""
+        const newTodoObj = {
+            text: newTodo,
+            id: Date.now(),
+        }
+        toDos.push(newTodoObj)
+        toDoAction(newTodoObj)
+        storeToDos()
     }
 }
 

@@ -13,24 +13,24 @@ if (getToDos !== null) {
     toDosParsed.forEach((item) => console.log("forEach runs"))
 }
 
-function toDoAction() {
+function paintTodo(e) {
     // Add HTML elements
     const span = document.createElement("span")
     const li = document.createElement("li")
     const deleteBtn = document.createElement("button")
     let toDoText = toDoInput.value // User todo input
-    span.classList.add(`${toDoText}`)
+    // span.classList.add(`${toDoText}`)
     deleteBtn.classList.add("deleteBtn")
     deleteBtn.innerText = "❌"
     deleteBtn.addEventListener("click", deleteBtnHandler)
 
     li.appendChild(span)
     li.appendChild(deleteBtn)
-    span.innerText = toDoText
+    span.innerText = e.text
     toDoList.appendChild(li)
 
     toDos.push(toDoText) // Add new todo to toDos array
-    storeToDos() // Store user's todos in localstorage
+    // storeToDos() // Store user's todos in localstorage
 }
 
 function deleteBtnHandler(e) {
@@ -41,6 +41,7 @@ function deleteBtnHandler(e) {
     // Delete from the localstorage
     // 1. Delete selected element from toDos array
     const targetText = deletingTarget.children[0].innerText
+    console.log(targetText)
     const index = toDos.indexOf()
     toDos.splice(index, 1)
     // 2. Empty local storage
@@ -56,17 +57,16 @@ function storeToDos() {
 function toDoListHandler(e) {
     if (toDoInput.value !== "") {
         e.preventDefault()
-        toDoAction()
-        toDoInput.value = ""
+        const newTodo = toDoInput.value
         const newTodoObj = {
             text: newTodo,
             id: Date.now(),
         }
         toDos.push(newTodoObj)
-        toDoAction(newTodoObj)
+        paintTodo(newTodoObj)
         storeToDos()
+        toDoInput.value = ""
     }
 }
 
 toDoListForm.addEventListener("submit", toDoListHandler)
-toDoAddBtn.addEventListener("click", toDoListHandler)

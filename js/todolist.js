@@ -15,6 +15,7 @@ if (getToDos !== null) {
 
 function paintTodo(e) {
     // Add HTML elements
+    console.log("paintTodo in action!")
     const span = document.createElement("span")
     const li = document.createElement("li")
     const deleteBtn = document.createElement("button")
@@ -29,19 +30,19 @@ function paintTodo(e) {
     span.innerText = e.text
     toDoList.appendChild(li)
 
-    toDos.push(toDoText) // Add new todo to toDos array
+    // toDos.push(toDoText) // Add new todo to toDos array
     // storeToDos() // Store user's todos in localstorage
 }
 
 function deleteBtnHandler(e) {
     // Delete from DOM
+    console.log("deleteBtnHandler in action")
     const deletingTarget = e.target.parentNode
     deletingTarget.remove()
 
     // Delete from the localstorage
     // 1. Delete selected element from toDos array
     const targetText = deletingTarget.children[0].innerText
-    console.log(targetText)
     const index = toDos.indexOf()
     toDos.splice(index, 1)
     // 2. Empty local storage
@@ -51,11 +52,13 @@ function deleteBtnHandler(e) {
 }
 
 function storeToDos() {
+    console.log("storeToDos in action!")
     localStorage.setItem("toDos", JSON.stringify(toDos)) // Save in localstorage
 }
 
 function toDoListHandler(e) {
     if (toDoInput.value !== "") {
+        console.log("toDoListHandler in action!")
         e.preventDefault()
         const newTodo = toDoInput.value
         const newTodoObj = {
